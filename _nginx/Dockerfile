@@ -1,5 +1,9 @@
 FROM nginx
-RUN apt-get update -qq && apt-get -y install apache2-utils && apt-get -y install python-certbot-nginx && apt-get -y install cron
+RUN apt-get update -qq
+RUN apt-get -y install apache2-utils
+RUN apt-get -y install python
+RUN apt-get -y install python3-certbot-nginx
+RUN apt-get -y install cron
 ENV RAILS_ROOT /var/www/rails_app
 WORKDIR $RAILS_ROOT
 RUN rm -Rf ./*
